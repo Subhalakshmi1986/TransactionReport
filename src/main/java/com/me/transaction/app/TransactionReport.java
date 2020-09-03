@@ -127,25 +127,25 @@ public class TransactionReport {
 
         String[] record = line.split(COMMA_DELIMITER);
         TransactionRecord transactionRecord = new TransactionRecord();
-        if (!Strings.isNullOrEmpty(record[0].trim())) {
+        if (!Strings.isNullOrEmpty(record[0])) {
             transactionRecord.setTransactionid(record[0].trim());
 
         }
-        if (!Strings.isNullOrEmpty(record[1].trim())) {
+        if (!Strings.isNullOrEmpty(record[1])) {
             transactionRecord.setFromAccountid(record[1].trim());
 
         }
-        if (!Strings.isNullOrEmpty(record[2].trim())) {
+        if (!Strings.isNullOrEmpty(record[2])) {
             transactionRecord.setToAccountid(record[2].trim());
 
         }
-        if (!Strings.isNullOrEmpty(record[3].trim())) {
+        if (!Strings.isNullOrEmpty(record[3])) {
             transactionRecord.setCreateAt(LocalDateTime.parse(record[3].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
         }
-        if (!Strings.isNullOrEmpty(record[4].trim())) {
+        if (!Strings.isNullOrEmpty(record[4])) {
             transactionRecord.setAmount(Double.parseDouble(record[4].trim()) * -1);
         }
-        if (!Strings.isNullOrEmpty(record[5].trim())) {
+        if (!Strings.isNullOrEmpty(record[5])) {
             transactionRecord.setTransactionType(record[5].trim());
             if (REVERSAL_TRANS.equalsIgnoreCase(record[5].trim()) && !Strings.isNullOrEmpty(record[6])) {
                 transactionRecord.setRelatedTransaction(record[6].trim());
