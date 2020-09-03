@@ -59,7 +59,11 @@ Enter the accountid(ACC######):ACC334455
 Enter the start date("dd/MM/yyyy HH:mm:ss"):20/10/2018 12:45:55
 
 Enter the end date:("dd/MM/yyyy HH:mm:ss"):20/10/2018 12:54:35
+```
 
+## Output
+
+```
 Relative Balance for the period is: -25.0
 
 Number of transactions included is: 1
