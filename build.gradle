@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group 'org.example'
+group 'com.me.transaction'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -12,5 +13,16 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.google.guava:guava:20.0'
+}
 
+ext {
+    javaMainClass = "com.me.transaction.app.TransactionReport"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+run{
+    standardInput = System.in
 }

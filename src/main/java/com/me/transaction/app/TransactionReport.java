@@ -126,33 +126,33 @@ public class TransactionReport {
     private static TransactionRecord apply(String line) {
 
         String[] record = line.split(COMMA_DELIMITER);
-        TransactionRecord debitTransactionRecord = new TransactionRecord();
+        TransactionRecord transactionRecord = new TransactionRecord();
         if (!Strings.isNullOrEmpty(record[0].trim())) {
-            debitTransactionRecord.setTransactionid(record[0].trim());
+            transactionRecord.setTransactionid(record[0].trim());
 
         }
         if (!Strings.isNullOrEmpty(record[1].trim())) {
-            debitTransactionRecord.setFromAccountid(record[1].trim());
+            transactionRecord.setFromAccountid(record[1].trim());
 
         }
-        if (!Strings.isNullOrEmpty(record[1].trim())) {
-            debitTransactionRecord.setToAccountid(record[1].trim());
+        if (!Strings.isNullOrEmpty(record[2].trim())) {
+            transactionRecord.setToAccountid(record[2].trim());
 
         }
         if (!Strings.isNullOrEmpty(record[3].trim())) {
-            debitTransactionRecord.setCreateAt(LocalDateTime.parse(record[3].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+            transactionRecord.setCreateAt(LocalDateTime.parse(record[3].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
         }
         if (!Strings.isNullOrEmpty(record[4].trim())) {
-            debitTransactionRecord.setAmount(Double.parseDouble(record[4].trim()) * -1);
+            transactionRecord.setAmount(Double.parseDouble(record[4].trim()) * -1);
         }
         if (!Strings.isNullOrEmpty(record[5].trim())) {
-            debitTransactionRecord.setTransactionType(record[5].trim());
+            transactionRecord.setTransactionType(record[5].trim());
             if (REVERSAL_TRANS.equalsIgnoreCase(record[5].trim()) && !Strings.isNullOrEmpty(record[6])) {
-                debitTransactionRecord.setRelatedTransaction(record[6].trim());
+                transactionRecord.setRelatedTransaction(record[6].trim());
             }
         }
 
-        return debitTransactionRecord;
+        return transactionRecord;
     }
 }
 
