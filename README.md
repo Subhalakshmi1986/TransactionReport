@@ -3,43 +3,67 @@ System which reports transaction results of the input csv file
 
 
 
-Design
--------
+## Design
+--------
+
 3 Files added 
-1.TransactionReport  - Main class file which runs the report
-2.TransactionRecord - Model for each individual records in csv
-3.InputRecord - Model representing input from user
 
-Formula calculation
--------------------
+1. TransactionReport  - Main class file which runs the report
+2. TransactionRecord - Model for each individual records in csv
+3. InputRecord - Model representing input from user
+
+
+## Formula calculation
+---------------------
+
 Relative balance = sum of amount credited and sum of amount debited for the account during the period
+
 Number of transactions = All "PAYMENT" transactions during the period
-"REVERSAL" transactions excluded for calculation and the related transactions excluded for calculation
 
-Additional Assumptions considered
+"REVERSAL" transactions and the related transactions excluded for reporting
+
+
+## Additional Assumptions considered
+------------------------------------
+
+1. User will always give input in valid format 
+
+## Prerequistes
+---------------
+
+1. Git installed
+
+2. Gradle 5.4.1 installed
+
+3. Java 1.8.0_211 installed
+
+
+## Instructions to run the program:
 ----------------------------------
-1.User will always give input in valid format 
+```
+1. git clone https://github.com/Subhalakshmi1986/TransactionReport.git
 
-Prerequistes 
-------------
-1.Git installed
-2.Gradle 5.4.1 installed
-3.Java 1.8.0_211 installed
+2. Navigate to TransactionReport folder
 
-Instructions to run the program:
---------------------------------
-1.git clone https://github.com/Subhalakshmi1986/TransactionReport.git
-2.Navigate to TransactionReport folder
-3.gradle build
-4.gradle run --console=plain
-5.Console prompts for user input as below :
+3. gradle build
+
+4. gradle run --console=plain
+
+5. Console prompts for user input as below :
+
 
 Enter the csv file path:/Users/SAISACHIEN/Desktop/Transactionrecords.csv
+
 Enter the accountid(ACC######):ACC334455
+
 Enter the start date("dd/MM/yyyy HH:mm:ss"):20/10/2018 12:45:55
+
 Enter the end date:("dd/MM/yyyy HH:mm:ss"):20/10/2018 12:54:35
+
 Relative Balance for the period is: -25.0
+
 Number of transactions included is: 1
+```
 
 
 
